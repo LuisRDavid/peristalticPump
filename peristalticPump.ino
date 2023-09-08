@@ -94,9 +94,6 @@ void setup()
 void loop()
 {
     timer();
-    Serial.println(totalTime);
-    Serial.println(minutes);
-    Serial.println(hours);
     pumpControl1();
     pumpControl2();
     pumpControl3();
