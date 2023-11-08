@@ -3,7 +3,7 @@
 **  @file pinNumbers.h
 **  @author Luis David Rodríguez-Centeno
 **  @date 08/30/23
-**  @version 0.1
+**  @version 2.0
 **  @copyright Copyright (c) 2023
 **
 **************************************************/
