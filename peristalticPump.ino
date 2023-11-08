@@ -2,8 +2,8 @@
 **
 **  @file peristalticPump.ino
 **  @author Luis David Rodríguez-Centeno
-**  @date 08/30/23
-**  @version 0.1
+**  @date 11/08/23
+**  @version 2.0
 **  @copyright Copyright (c) 2023
 **
 *************************************************************/
@@ -35,51 +35,15 @@ void timer()
     totalTime = float(hours) + minDecimal;
 }
 
-void pumpControl1()
+void pumpControl(float time, float flowTime, int pump)
 {
-    if (totalTime > vol1)
+    if (time > flowTime)
     {
-        digitalWrite(pump1, pwm2Value);
+        digitalWrite(pump, pwm2Value);
     }
     else
     {
-        digitalWrite(pump1, pwm1Value);
-    }
-}
-
-void pumpControl2()
-{
-    if (totalTime > vol2)
-    {
-        digitalWrite(pump2, pwm2Value);
-    }
-    else
-    {
-        digitalWrite(pump2, pwm1Value);
-    }
-}
-
-void pumpControl3()
-{
-    if (totalTime > vol3)
-    {
-        digitalWrite(pump3, pwm2Value);
-    }
-    else
-    {
-        digitalWrite(pump3, pwm1Value);
-    }
-}
-
-void pumpControl4()
-{
-    if (totalTime > vol4)
-    {
-        digitalWrite(pump4, pwm2Value);
-    }
-    else
-    {
-        digitalWrite(pump4, pwm1Value);
+        digitalWrite(pump, pwm1Value);
     }
 }
 
@@ -97,8 +61,8 @@ void loop()
     Serial.println(totalTime);
     Serial.println(minutes);
     Serial.println(hours);
-    pumpControl1();
-    pumpControl2();
-    pumpControl3();
-    pumpControl4();
+    pumpControl(totalTime, vol1, pump1);
+    pumpControl(totalTime, vol2, pump2);
+    pumpControl(totalTime, vol3, pump3);
+    pumpControl(totalTime, vol4, pump4);
 }

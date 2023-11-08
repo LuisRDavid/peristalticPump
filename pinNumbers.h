@@ -25,10 +25,10 @@
 #define pump1 16
 
 /* Volume settings */
-#define volume1 1
+#define volume1 0
 #define volume2 2
-#define volume3 3
-#define volume4 4
+#define volume3 2
+#define volume4 0
 #define flowRate 0.83
 
 /* Timer constants*/
